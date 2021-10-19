@@ -1,0 +1,26 @@
+.card{
+    background-color:rgb(235, 227, 227);
+    border-radius:6px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.2);
+    width:40%;
+    position :relative;
+    right:-225px;
+}
+.login
+{
+    background-color: cornsilk;
+    padding:20px 30px;
+}
+
+.error{
+    color:rgb(173, 24, 24)
+}
+.sub{
+    position:relative;
+    right:-222px;
+}
+
+.sub1{
+    position:relative;
+    bottom:70px;
+}

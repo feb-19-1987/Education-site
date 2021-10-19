@@ -1,0 +1,12 @@
+.course{
+    background-color: rgb(216, 214, 218);
+    padding: 50px 100px;
+}
+.box{
+    background-color: #e4c4d0;
+    padding: 10px 20px;
+}
+
+.name{
+    font-size: small;
+}

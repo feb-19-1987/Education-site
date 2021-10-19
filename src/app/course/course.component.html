@@ -1,0 +1,16 @@
+<section class="card">
+    <div class="container">
+       <u> <h1 class="text-center">All courses</h1></u>
+        <div class="row">
+          <div class="col-lg-3" *ngFor="let co of courses">
+              <div class="box shadow-sm">
+               <img src="{{co.image}}" width="40%" height="100px">  
+               <br>
+         <u><h6 class="mt-1">{{co.name}}</h6></u> 
+          <p class="mt-1">{{co.description}}</p>
+    
+        </div>
+    </div>  
+    </div>
+    </div>
+</section>

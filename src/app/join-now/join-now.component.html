@@ -1,0 +1,52 @@
+
+<br><h1>SIGNUP</h1><br>
+<div class="container">
+    <div class="form">
+        <form [formGroup]="signupform" (ngSubmit)="onSignup()">
+
+            <div class="form-group">
+                <label for="fname">First Name :</label>
+                <input type="text" class="form-control" name="fname" id="name" formControlName="fname">
+                <div class="alert alert-danger" *ngIf="submitted && f.fname.errors">
+                <div *ngIf="f.fname.errors.required">username required</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="lname">Last Name :</label>
+                <input type="text" class="form-control" name="lname" id="lname" formControlName="lname">
+                <div class="alert alert-danger" *ngIf="submitted && f.lname.errors">
+                <div *ngIf="f.lname.errors.required">username required</div>
+                </div>
+            </div>
+
+            <br>
+            <div class="form-group">
+                <label for="text" class="form-label">Select course:</label>
+                <select name="courses" id="courses">
+                  <option value="Angular">Angular</option>
+                  <option value="Data Science">Data Science</option>
+                  <option value="Networking">Networking</option>
+                  <option value="Node">Node</option>
+                </select>
+              </div>
+              <br>
+            <div class="form-group">
+                <label for="email" >email id :</label>
+                <input type="text" class="form-control" name="email" id="email" formControlName="email">
+                <div class="alert alert-danger" *ngIf="submitted && f.email.errors">
+                    <div *ngIf="f.email.errors.required">invallid email</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password">Password :</label>
+                <input type="password" class="form-control" name="password" id="password" formControlName="password">
+                <div class="alert alert-danger" *ngIf="submitted && f.password.errors">
+                    <div *ngIf="f.password.errors.required">password required</div>
+                    <div *ngIf="f.password.errors.minlength">minimum length should be 3</div>
+                </div>
+            </div>
+            <button class="btn btn-primary" type="submit">sign up</button>
+        </form>
+    </div>
+</div>
