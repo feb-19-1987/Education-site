@@ -1,20 +1,36 @@
 {
   "students": [
     {
-      "fname": "dd",
-      "lname": "dd",
-      "course": "Node",
-      "email": "dd@ee",
-      "password": "sss",
+      "fname": "Divya",
+      "lname": "Prakash",
+      "course": "Angular",
+      "email": "malus.amaldev7@gmail.com",
+      "password": "kashinatha",
       "id": 8
     },
     {
-      "fname": "kkk",
-      "lname": "ss",
+      "fname": "kashi",
+      "lname": "Nath",
+      "course": "Networking",
+      "email": "malus.amaldev7@gmail.com",
+      "password": "1234",
+      "id": 10
+    },
+    {
+      "fname": "Stephy",
+      "lname": "Mean",
       "course": "Angular",
-      "email": "sss@dd",
-      "password": "sss",
-      "id": 9
+      "email": "stephy@gmail.com",
+      "password": "stephy",
+      "id": 11
+    },
+    {
+      "fname": "kashi",
+      "lname": "Nath",
+      "course": "Data Science",
+      "email": "malus.amaldev7@gmail.com",
+      "password": "1234",
+      "id": 12
     }
   ]
 }

@@ -1,25 +1,24 @@
 
-<div class="container">
-    <div class="form">
+<div class="card">
+    <div>
         <form [formGroup]="signupform" (ngSubmit)="onSignup()">
-
+<!-- First Name -->
             <div class="form-group">
                 <label for="fname">First Name :</label>
-                <input type="text" class="form-control" name="fname" id="name" formControlName="fname">
-                <div class="alert alert-danger" *ngIf="submitted && f.fname.errors">
-                <div *ngIf="f.fname.errors.required">username required</div>
-                </div>
+                <input type="text" class="form-control" name="fname" id="name" formControlName="fname" placeholder="Enter First Name:">
+                <small *ngIf="signupform.get('fname').invalid && signupform.get('fname').touched" class="text-danger">
+                    First Name is mandatory </small>
+                
             </div>
-
+<!-- Last Name -->
             <div class="form-group">
                 <label for="lname">Last Name :</label>
-                <input type="text" class="form-control" name="lname" id="lname" formControlName="lname">
-                <div class="alert alert-danger" *ngIf="submitted && f.lname.errors">
-                <div *ngIf="f.lname.errors.required">username required</div>
-                </div>
-            </div>
+                <input type="text" class="form-control" name="lname" id="lname" formControlName="lname" placeholder="Enter Lastname:">
+                <small *ngIf="signupform.get('lname').invalid && signupform.get('lname').touched" class="text-danger">
+                    Last Name is mandatory </small>
+            </div> 
 
-            <br>
+<!--Select course  -->
             <div class="form-group">
                 <label for="text" class="form-label">Select course:</label>
                 <select formControlName="course" id="courses" name="courses">
@@ -27,25 +26,29 @@
                   <option value="Data Science">Data Science</option>
                   <option value="Networking">Networking</option>
                   <option value="Node">Node</option>
+                  <small *ngIf="signupform.get('course').invalid && signupform.get('course').touched" class="text-danger">
+                    Choose one course of your choice </small>
                 </select>
               </div>
-              <br>
+<!-- E-mail -->
             <div class="form-group">
-                <label for="email" >email id :</label>
-                <input type="text" class="form-control" name="email" id="email" formControlName="email">
-                <div class="alert alert-danger" *ngIf="submitted && f.email.errors">
-                    <div *ngIf="f.email.errors.required">invallid email</div>
-                </div>
+                <label for="email" >Enter E-mail :</label>
+                <input type="text" class="form-control" name="email" id="email" formControlName="email" placeholder="Enter E-mail">
+                <small *ngIf="signupform.get('email').invalid && signupform.get('email').touched" class="text-danger">
+                    Enter a valid E-mail </small>             
             </div>
+
+
+<!-- Password -->
             <div class="form-group">
                 <label for="password">Password :</label>
-                <input type="password" class="form-control" name="password" id="password" formControlName="password">
-                <div class="alert alert-danger" *ngIf="submitted && f.password.errors">
-                    <div *ngIf="f.password.errors.required">password required</div>
-                    <div *ngIf="f.password.errors.minlength">minimum length should be 3</div>
-                </div>
-            </div>
-            <button class="btn btn-primary" type="submit">sign up</button>
+                <input type="password" class="form-control" name="password" id="password" formControlName="password" placeholder="Enter password">
+                <small *ngIf="signupform.get('password').invalid && signupform.get('password').touched" class="text-danger">
+                    Enter a valid password </small>  
+            </div> 
+
+
+            <button class="btn btn-danger" type="submit" [disabled]="signupform.invalid">sign up</button>
         </form>
     </div>
 </div>

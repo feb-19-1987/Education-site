@@ -1,3 +1,4 @@
+import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { EducationserviceService } from '../educationservice.service';
@@ -9,22 +10,30 @@ import { EducationserviceService } from '../educationservice.service';
 })
 export class JoinNowComponent implements OnInit {
 
-  signupform:FormGroup;
+  signupform!:FormGroup;
   submitted=false;
   
-  constructor(private es:EducationserviceService,private fb:FormBuilder) { 
-
-  this.signupform=this.fb.group(
-    {
-      fname:new FormControl(null,[Validators.required]),
-      lname:new FormControl(null,[Validators.required]),
-      course:new FormControl(''),
-      email:new FormControl('',[Validators.required,Validators.email]),
-      password:new FormControl('',[Validators.required,Validators.minLength(3)])
-    })
-  }
+  constructor(private es:EducationserviceService) { 
+    // private fb:FormBuilder
+  // this.signupform=this.fb.group(
+  //   {
+  //     fname:new FormControl(null,[Validators.required]),
+  //     lname:new FormControl(null,[Validators.required]),
+  //     course:new FormControl(''),
+  //     email:new FormControl('',[Validators.required,Validators.email]),
+  //     password:new FormControl('',[Validators.required,Validators.minLength(3)])
+  //   })
+   }
   
-  ngOnInit(): void {
+  ngOnInit() {
+    this.signupform=new FormGroup({
+
+      'fname':new FormControl(null,Validators.required),
+      'lname':new FormControl(null,Validators.required),
+      'course':new FormControl(null,Validators.required),
+      'email':new FormControl(null,[Validators.required,Validators.email]),
+      'password':new FormControl(null,Validators.required)
+    })
   }
 
   onSignup(){
@@ -36,8 +45,6 @@ export class JoinNowComponent implements OnInit {
     } 
   }
 
-  get f(){
-    return this.signupform.controls
-  }
+  
 
 }
