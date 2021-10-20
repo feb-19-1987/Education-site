@@ -1,5 +1,4 @@
 
-<br><h1>SIGNUP</h1><br>
 <div class="container">
     <div class="form">
         <form [formGroup]="signupform" (ngSubmit)="onSignup()">
@@ -23,7 +22,7 @@
             <br>
             <div class="form-group">
                 <label for="text" class="form-label">Select course:</label>
-                <select name="courses" id="courses">
+                <select formControlName="course" id="courses" name="courses">
                   <option value="Angular">Angular</option>
                   <option value="Data Science">Data Science</option>
                   <option value="Networking">Networking</option>

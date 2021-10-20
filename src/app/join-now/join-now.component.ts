@@ -11,14 +11,14 @@ export class JoinNowComponent implements OnInit {
 
   signupform:FormGroup;
   submitted=false;
-
+  
   constructor(private es:EducationserviceService,private fb:FormBuilder) { 
 
   this.signupform=this.fb.group(
     {
       fname:new FormControl(null,[Validators.required]),
       lname:new FormControl(null,[Validators.required]),
-      courses:new FormControl(''),
+      course:new FormControl(''),
       email:new FormControl('',[Validators.required,Validators.email]),
       password:new FormControl('',[Validators.required,Validators.minLength(3)])
     })
@@ -31,6 +31,7 @@ export class JoinNowComponent implements OnInit {
     this.submitted=true;
     if(this.signupform.valid)
     {
+      console.log(this.signupform.value)
     this.es.posteducationlogin(this.signupform.value).subscribe((d:any)=>{alert('data added')})
     } 
   }

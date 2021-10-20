@@ -32,7 +32,7 @@ export class StudentdetailsComponent implements OnInit {
   {
     const sid=slogin.value.id;
    let student:Students={
-     id:slogin.value.id,
+    id:slogin.value.id,
     fname:slogin.value.fname,
     lname:slogin.value.lname,
     course:slogin.value.courses,
